@@ -1,0 +1,445 @@
+@import 'variales';
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.page {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include breakpoint(sm) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    &-light {
+        background-color: $light;
+    }
+    &-dark {
+        background-color: $dark;
+    }
+}
+
+.wrapper {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 33px;
+    padding-top: 46px;
+    &-logo {
+        @include breakpoint(xs) {
+            max-width: 130px;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    @include breakpoint(lg) {
+        display: none;
+    }
+    &-item {
+        margin-right: 45px;
+    }
+    &-link {
+        text-decoration: none;
+        color: $dark;
+        font-weight: 500;
+    }
+    &-info {
+        .nav-item {
+            margin-left: 22px;
+            margin-right: 22px;
+        }
+    }
+}
+.cart {
+    border: none;
+    background-image: url(../img/cart.svg);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    padding-left: 45px;
+    display: block;
+    height: 26.28px;
+    &-count {
+        background-image: url(../img/cart-bg.svg);
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 13px 24px;
+        display: block;
+    }
+}
+.title-h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    @include breakpoint(xs) {
+        font-size: 28px;
+    }   
+}
+.btn {
+    background-color: $accent;
+    color: #fff;
+    padding: 18px 33px 18px 27px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.45px;
+    &-xs {
+        padding: 8px 28px;
+    }
+    &-center {
+        display: block;
+        text-align: center;
+        max-width: 200px;
+        margin: 0 auto;
+        span {
+            margin-right: 15px;
+        }
+    }
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(lg) {
+        flex-wrap: wrap;
+    }
+    &-item {
+        flex: 0 0 50%;
+        @include breakpoint(lg) {
+            flex: 0 0 100%;
+        }
+    }
+    .sale {
+        @include breakpoint(lg) {
+            text-align: center;
+        }
+        
+        &-description {
+            font-size: 30px;
+            letter-spacing: 0.7px;
+            @include breakpoint(sm) {
+                font-size: 20px;
+            }
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 55px;
+            margin-top: -2px;
+            letter-spacing: 2px;
+            margin-bottom: 61px;
+            @include breakpoint(sm) {
+                font-size: 28px;
+                margin-top: 10px;
+                margin-bottom: 45px;
+            }
+        }
+    }
+}
+
+.box {
+    position: relative;
+    @include breakpoint(lg) {
+        max-width: 600px;
+        margin: 50px auto 0;
+    }
+    @include breakpoint(sm) {
+        max-width: 350px;
+    }
+    &-price {
+        position: absolute;
+        right: 9px;
+        text-align: right;
+        top: 33px;
+        letter-spacing: 1px;
+        &-old {
+            font-weight: 700;
+            font-size: 24px;
+            @include breakpoint(sm) {
+                font-size: 14px;
+            }
+        }
+        &-new {
+            @include breakpoint(sm) {
+                font-size: 23px;
+                margin-top: 4px;
+            }
+            color: $important;
+            font-weight: 700;
+            font-size: 42px;
+            margin-top: 17px;
+        }        
+    }
+    &-image {
+        width: 100%;
+        max-width: 556px;
+    }
+}
+.notice {
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+    @include breakpoint(sm) {
+        padding: 40px 0 42px;
+    }
+    &-title {
+        @include breakpoint(sm) {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        font-size: 30px;
+        text-transform: uppercase;
+        font-weight: 400;
+        .span {
+            font-weight: 700;
+            @include breakpoint(xs) {
+                display: block;
+            }
+        }
+    }
+    &-description {
+        @include breakpoint(sm) {
+            font-size: 14px;
+        }
+    }
+}
+.collection {
+    display: flex;
+    justify-content: space-between;   
+    @include breakpoint(lg) {
+        flex-wrap: wrap;
+    } 
+    &-item {
+        padding: 50px 0;
+        flex: 0 0 50%;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 50px) bottom;
+        background-size: 190px 171px;
+        @include breakpoint(lg) {
+            flex: 0 0 100%;
+        }     
+        @include breakpoint(xs) {
+            padding: 27px 0 84px;
+            background-size: 153px 130px;
+            background-position: 100% bottom;
+        }           
+    }
+    &-man {
+        background-image: url("../img/man.png");
+    }
+    &-woman {
+        background-image: url("../img/woman.png");
+    }
+    &-title {
+        font-size: 24p;
+        font-weight: 300;
+        text-transform: uppercase;
+        @include breakpoint(xs) {
+            font-size: 18px;
+        }   
+    }
+    &-description {
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    @include breakpoint(lg) {
+        flex-wrap: wrap;
+    }
+    @include breakpoint(xs) {
+        margin-bottom: 50px;
+    }
+    &-item {
+        text-align: center;
+        @include breakpoint(lg) {
+            flex: 0 0 49%;
+            margin-bottom: 20px;
+        }
+        @include breakpoint(xs) {
+            flex: 0 0 100%;
+        }
+    }
+    &-title {
+        font-weight: 600;
+        text-align: center;
+    }
+    &-price {
+        color: $accent;
+        font-weight: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    @include breakpoint(lg) {
+        flex-wrap: wrap;
+    }
+    &-logo {
+        flex: 0 0 40%;
+        @include breakpoint(lg) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    &-nav {
+        flex: 0 0 60%;
+        display: flex;
+        color: #fff;
+        justify-content: space-between;
+        @include breakpoint(lg) {
+            flex: 0 0 100%;
+        }
+        @include breakpoint(sm) {
+            flex-wrap: wrap;
+        }
+    }
+    &-list {
+        list-style-type: none;
+        padding-left: 0;
+        @include breakpoint(sm) {
+            flex: 0 0 49%;
+            margin-bottom: 20px;
+        }
+        &-title {
+            font-size: 10px;
+            font-weight: 700;
+        }
+        &-link {
+            color: $gray;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        &-item {
+            margin-bottom: 10px;
+        }
+    }
+}
+.logo-soc {
+    margin-right: 10px;
+}
+
+.nav-bar {
+	position: absolute;
+	background-color: $accent;
+	top: 0;
+	right: 100%;
+	height: 100vh;
+	width: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: position 2.9s;
+	-webkit-transition: position 2.9s;
+	-moz-transition: position 2.9s;
+	-ms-transition: position 2.9s;
+	-o-transition: position 2.9s;
+}
+
+.toggle {
+	left: 0;
+	box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+.toggle-menu {
+	background-color: $dark;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+    padding: 7px 12px;
+	cursor: pointer;
+
+    @include breakpoint(minlg) {
+        display: none;
+    }
+
+    @include breakpoint(xs) {
+        width: 18px;
+	    height: 18px;
+    }
+}
+
+.line {
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
+	-moz-transition: transform 0.2s ease-out;
+	-ms-transition: transform 0.2s ease-out;
+	-o-transition: transform 0.2s ease-out;
+}
+
+.toggle .line1 {
+	background-color: #000000;
+	transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+}
+
+.toggle .line2 {
+	display: none;
+}
+
+.toggle .line3 {
+	background-color: #000000;
+	transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+}
+
+.toggle .toggle-menu {
+	background-color: white;
+}
+
+.nav-list {
+	list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.nav-list-item {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.nav-link::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	transform: scaleX(0);
+	transition: transform 0.4s ease-in-out;
+	transform-origin: left;
+	-webkit-transition: transform 0.4s ease-in-out;
+	-moz-transition: transform 0.4s ease-in-out;
+	-ms-transition: transform 0.4s ease-in-out;
+	-o-transition: transform 0.4s ease-in-out;
+}
+
+.nav-link:hover::before {
+	transform: scaleX(1);
+}
